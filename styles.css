@@ -84,6 +84,14 @@ div {
     padding: 1rem;
 }
 
+.buttons,
+.input-info,
+.radio-buttons {
+    border-radius: 25%;
+    display: flex;
+    justify-content: center;
+}
+
 .button-info {
     display: flex;
     flex-direction: row;
@@ -104,6 +112,10 @@ div {
     width: 30px;
     height: 30px;
     text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(189, 192, 35);
 }
 
 header {
@@ -138,6 +150,19 @@ header {
     border-top: 3px solid black;
     padding-left: 5vw;
     padding-right: 5vw;
+}
+
+.submit-button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 15px;
+    background-color: burlywood;
+    font-size: 1.5rem;
+}
+
+.submit-button:hover {
+    background-color:aqua;
 }
 
 
