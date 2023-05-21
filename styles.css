@@ -1,0 +1,143 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-image: url("imgs/background.png"); 
+    background-size: cover;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header-text { 
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.header-text > p {
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 5vw;
+    padding-right: 5vw;
+  
+}
+
+.header {
+    background-image: linear-gradient(to right, rgb(255, 0, 251) , rgb(157, 15, 155));   
+}
+
+
+div {
+    display: block;
+}
+
+.body {
+    margin-bottom: 30px;
+}
+
+.body-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.input-info {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: lightskyblue;
+    padding: 1rem;
+    border: 1px solid black;
+
+}
+
+.spacer {
+    content: "";
+    height: 40px;
+    visibility:hidden;
+}
+
+
+.buttons {
+    display: flex;
+    max-width: 70%;
+    flex-wrap: wrap;
+    background-color: lightgreen;
+    align-items: center;
+    border: 1px solid black;
+    padding: 1rem;
+    row-gap: 10px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+.radio-buttons {
+    display: flex;
+    font-size: 1rem;
+    gap: 20px;
+    border: 1px solid black;
+    margin-top: 5px;
+    background-color: lightgrey;
+    padding: 1rem;
+}
+
+.button-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-right: 20px;
+    align-items: center;
+}
+
+
+.button {
+    background-color: yellow;
+    border-radius: 30%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    touch-action: manipulation;
+    border-radius: 30%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+header {
+    margin-top: 20px;
+}
+
+.row { 
+    display: flex;
+    justify-content: center;
+}
+
+.match-info > div > input {
+    width: 30%;
+}
+
+.divider {
+    width: 50%;
+    border-bottom: 3px solid black;
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(255, 0, 251) , rgb(157, 15, 155));   
+    width: 100%
+}
+.footer-text {
+    display: flex;
+    justify-content: space-between;
+    border-top: 3px solid black;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+
