@@ -2,10 +2,14 @@ body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url("imgs/background.png"); 
-    background-size: cover;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background-color:   rgb(117,117,117);
 }
+
+.header-text, .footer-text {
+    font-family: 'Josefin Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 
 .header-text { 
     font-size: 1rem;
@@ -13,18 +17,90 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    color: white;
 }
 
 .header-text > p {
-    font-family: Arial, Helvetica, sans-serif;
     padding-left: 5vw;
     padding-right: 5vw;
   
 }
 
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(117,117,117);
+}
+
+.tab {
+    border: 1px solid white;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    user-select: none;
+    height: 50px;
+}
+
+
+.tab p {
+    font-size: 1.25rem;
+}
+
+svg {
+    width: 50%;
+    height: 50%;
+    color: red;
+    background-color: red;
+}
+.tab:hover {
+    background-color: rgb(214, 14, 214);
+}
+
+
+.tab:focus {
+     background-color: lightpink;
+}
+
+.logo {
+    aspect-ratio: auto;
+    width: auto;
+    height: 3rem;
+
+}
+
+.active {
+    background-color: fuchsia;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-active {
+    display: block;
+}
+
+.icon {
+    width: auto;
+    height: 2rem;
+    border: 1px solid white;
+    border-radius: 45%;
+    padding: 5px;
+    background-color: lightgrey;
+    display: inline-block;
+    padding: 0.5em 0.6em;
+    height: 1rem;
+}
+
 .header {
-    background-image: linear-gradient(to right, rgb(255, 0, 251) , rgb(157, 15, 155));   
+     background-image: linear-gradient(to right, rgb(82, 34, 139) , rgb(33, 10, 65));   
+
 }
 
 
@@ -34,6 +110,7 @@ div {
 
 .body {
     margin-bottom: 30px;
+    background-color: rgb(117,117,117);
 }
 
 .body-content {
@@ -48,9 +125,7 @@ div {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: lightskyblue;
     padding: 1rem;
-    border: 1px solid black;
 
 }
 
@@ -65,9 +140,7 @@ div {
     display: flex;
     max-width: 70%;
     flex-wrap: wrap;
-    background-color: lightgreen;
     align-items: center;
-    border: 1px solid black;
     padding: 1rem;
     row-gap: 10px;
     margin-top: 10px;
@@ -78,9 +151,7 @@ div {
     display: flex;
     font-size: 1rem;
     gap: 20px;
-    border: 1px solid black;
     margin-top: 5px;
-    background-color: lightgrey;
     padding: 1rem;
 }
 
@@ -98,6 +169,7 @@ div {
     gap: 1rem;
     margin-right: 20px;
     align-items: center;
+    
 }
 
 
@@ -112,6 +184,7 @@ div {
     width: 30px;
     height: 30px;
     text-align: center;
+    color: black;
 }
 
 .button:hover {
@@ -133,7 +206,7 @@ header {
 
 .divider {
     width: 50%;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid rgb(255, 255, 255);
 }
 
 
@@ -141,14 +214,16 @@ header {
     position: fixed;
     bottom: 0;
     left: 0;
-    background-image: linear-gradient(to right, rgb(255, 0, 251) , rgb(157, 15, 155));   
-    width: 100%
+    background-image: linear-gradient(to right, rgb(82, 34, 139) , rgb(33, 10, 65));   
+    width: 100%;
 }
 .footer-text {
     display: flex;
     justify-content: space-between;
-    border-top: 3px solid black;
+    align-items: center;
+    border-top: 3px solid rgb(255, 255, 255);
     padding-left: 5vw;
+    color: white;
     padding-right: 5vw;
 }
 

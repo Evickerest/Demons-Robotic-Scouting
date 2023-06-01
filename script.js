@@ -14,3 +14,20 @@ buttons.forEach( button => {
     document.getElementById(inputTargetId).value = Math.max(0,newScore);
   });
 });
+
+const tabs = document.querySelectorAll(".tab");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabs.forEach( tab => {
+  
+  tab.addEventListener( "click", () => {
+    tabs.forEach(tab => tab.classList.remove("active"));
+    tabContents.forEach(content => content.classList.remove("tab-active"));
+
+    document.querySelector(tab.dataset.target).classList.add("tab-active");
+    tab.classList.add("active");
+  });
+});
+
+
+
