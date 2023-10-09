@@ -22,7 +22,7 @@
            <img class="icon" src="imgs/info-solid.svg"></img>
         </div>
         <div data-target=".auto-content" class="tab">
-            <p>Autonomous</p>
+            <p>Auto</p>
             <img class="icon" src="imgs/robot-solid.svg"></img>
         </div>
         <div data-target=".teleop-content" class="tab">
@@ -35,7 +35,7 @@
             <img class="icon" src="imgs/flag-checkered-solid.svg"></img>
         </div>
     </div>
-
+    <form action="action.php" method="post">
         <div class="body">
             <div class="body-content">
 
@@ -85,18 +85,18 @@
                     </div>
                     <div class="buttons">
                         <div class="button-info">
-                            <span>Score:</span>
-                            <span data-target="auto-score-view" value="1" class="button">+1</span>
+                            <span> Score:</span>
+                            <span data-target="auto-score-view" value="1" class="button">+</span>
                             <div id="auto-score-view">0</div>
                             <input type="hidden" id="auto-score" name="auto-score" value="0">
-                            <span data-target="auto-score-view" value="-1" class="button">-1</span>
+                            <span data-target="auto-score-view" value="-1" class="button">-</span>
                         </div>
                         <div class="button-info">
                             <span>Misses:</span> 
-                            <span data-target="auto-misses-view" value="1" class="button">+1</span>
+                            <span data-target="auto-misses-view" value="1" class="button">+</span>
                             <div id="auto-misses-view">0</div>
                             <input type="hidden" id="auto-misses" name="auto-misses" value="0">
-                            <span data-target="auto-misses-view" value="-1" class="button">-1</span>
+                            <span data-target="auto-misses-view" value="-1" class="button">-</span>
                         </div>
                     </div>
                 </div>
@@ -107,18 +107,18 @@
                     <div class="divider"></div>
                     <div class="buttons">
                         <div class="button-info">
-                            <span>Score:</span>
-                            <span data-target="teleop-score-view" value="1" class="button">+1</span>
+                            <span> Score:</span>
+                            <span data-target="teleop-score-view" value="1" class="button">+</span>
                             <div id="teleop-score-view">0</div>
                             <input type="hidden" id="teleop-score" name="teleop-score" value="0">
-                            <span data-target="teleop-score-view" value="-1" class="button">-1</span> 
+                            <span data-target="teleop-score-view" value="-1" class="button">-</span> 
                         </div>
                         <div class="button-info">
                             <span>Misses:</span>
-                            <span data-target="teleop-misses-view" value="1" class="button">+1</span>
+                            <span data-target="teleop-misses-view" value="1" class="button">+</span>
                             <div id="teleop-misses-view">0</div>
                             <input type="hidden" id="teleop-misses" name="teleop-misses" value="0">
-                            <span data-target="teleop-misses-view" value="-1" class="button">-1</span>
+                            <span data-target="teleop-misses-view" value="-1" class="button">-</span>
                         </div>
                     </div>
                 </div>
@@ -149,20 +149,18 @@
                     <div class="input-info">
                         <div class="row">
                             <label>Comments:</label>
-                            <input type="text" name="comments">
+                            <input id="text-comment" type="text" name="comments">
                         </div>
                     </div>
                     <input type="submit" class="submit-button">
                 </div> 
             </div>
         </div>
-
+</form>
     <div class="spacer"></div>
     <div class="footer">
         <div class="footer-text">
-            <p>Copyright Demons</p>
             <img class="logo" src="imgs/demonslogo.png" alt="Demons logo">
-            <p>2023</p>
         </div>
         
     </div>
