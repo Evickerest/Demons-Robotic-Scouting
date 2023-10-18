@@ -141,9 +141,54 @@ svg {
     flex-direction: column;
     gap: 10px;
     padding: 1rem;
+    margin-bottom: 1rem;
     border: 3px solid rgb(255, 255, 255);
     background-color: var(--secondary-background-color);
+    align-items: center;
 
+}
+
+.teleop-score-container {
+    border: 3px solid rgb(255, 255, 255);
+    background-color: var(--secondary-background-color);
+    margin-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.score-button {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-size: 2rem;
+    touch-action: manipulation;
+    cursor: pointer;
+    
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hits-title {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    font-size:2rem;
+    text-align: center;
+}
+
+.misses-title {
+    grid-column-start: 5;
+    grid-column-end: 8;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.piece-logo {
+    font-size: 2rem;
 }
 
 .spacer {
@@ -169,8 +214,10 @@ svg {
 .radio-buttons {
     display: flex;
     font-size: 1rem;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 5px; 
     margin-top: 5px;
+    margin-bottom: 1rem;
     padding: 1rem;
     background-color: var(--secondary-background-color);
     border: 3px solid white;
@@ -204,6 +251,8 @@ svg {
     text-align: center;
     color: black;
 }
+
+
 
 
 .button:hover {
@@ -247,12 +296,15 @@ header {
 }
 
 .submit-button {
-    width: 100px;
     height: 50px;
     border-radius: 10px;
     margin-top: 15px;
     background-color: burlywood;
     font-size: 1.5rem;
+}
+
+.broke-button {
+    display: none;
 }
 
 .submit-button:hover {
@@ -267,6 +319,88 @@ header {
 
 #text-comment {
     text-wrap: wrap;
-    font-size: 2rem;
+    width: 70vw;
 }
 
+#comment-label {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.qual-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 70vw;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.qual {
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    border: 3px solid rgb(255, 255, 255);
+    background-color: var(--left-gradient-color);
+    max-width: 70vw;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.qual-stars-container {
+    display: flex;
+}
+
+.star {
+    font-size: 2rem;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.qual-label {
+    font-weight: 500;
+    font-size: large;
+    align-self: flex-start;
+}
+
+.star-checked {
+    color: yellow;
+}
+
+.star-clear-button {
+    display: flex;
+    background-color: red;
+    border-radius: 30%;
+    touch-action: manipulation;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    margin-left: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    font-family: "Josefin Sans";
+}
+
+.quad-divider {
+    align-self: flex-start;
+    margin-bottom: -7px;
+    width: 60%;
+}
+
+input[type='checkbox'], input[type='radio'] {
+    margin-right: -2px;
+    transform: translateY(2px);
+}
+
+ @media screen and (max-width: 410px) {
+    .radio-buttons {
+        flex-wrap: wrap;
+    }
+} 
