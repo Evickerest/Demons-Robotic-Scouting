@@ -29,5 +29,75 @@ tabs.forEach( tab => {
   });
 });
 
+qualStars = document.querySelectorAll(".star");
+
+qualStars.forEach( star => {
+    star.addEventListener("click", ()=> {
+        recheckStars( star );
+    });
+});
+
+starClearButtons = document.querySelectorAll(".star-clear-button");
+
+starClearButtons.forEach( button => {
+    button.addEventListener("click", ()=>{
+        recheckStars( button );
+    });
+});
+
+function recheckStars( buttonPressed ){
+    siblingStars = buttonPressed.parentElement.querySelectorAll(".star");
+
+    if( buttonPressed.textContent == "clear"){
+        valueFilter = 0;
+    } else {
+        valueFilter = buttonPressed.dataset.value;
+    }
+    
+    siblingStars.forEach( star => {
+        if( star.dataset.value <= valueFilter){
+            star.classList.add("star-checked");
+        } else {
+            star.classList.remove("star-checked");
+        }
+    }); 
+}
+
+noneBoxes = document.querySelectorAll("input[data-id='none']");
+
+noneBoxes.forEach(noneBox => {
+    noneBox.addEventListener("change", () => {
+        siblingBoxes = noneBox.parentElement.parentElement.querySelectorAll("input:not([data-id='none'])");
+        siblingBoxes.forEach(box => {
+            box.checked = false;
+        })
+    });
+});
+
+robotBrokeBox = document.querySelector("input[value='Broke']");
+brokeSubmitButton = document.querySelector("#broke");
+
+robotBrokeBox.addEventListener("change", () => {
+    vis = robotBrokeBox.checked ? "block" : "none";
+    brokeSubmitButton.style.display = vis;
+});
+
+scoreButtons = document.querySelectorAll(".score-button");
+
+scoreButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        var previousSibling = button.previousElementSibling;
+        var score;
+        if( [...previousSibling.classList].includes("score-value")){
+            score = previousSibling;
+        } else {
+            score = button.nextElementSibling;
+        }
+        const buttonValue = button.dataset.value;
+        const currentScore = score.textContent;
+        const newScore = parseInt(currentScore) + parseInt(buttonValue);
+        score.textContent = Math.max(0,newScore);
+    });
+});
 
 
