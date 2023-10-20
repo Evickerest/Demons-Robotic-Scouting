@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Scouting Prototype</title>
+        <title>Scouting Application</title>
         <link rel="stylesheet" href="styles.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="script.js" defer></script>
@@ -35,7 +35,7 @@
             <img class="icon" src="imgs/flag-checkered-solid.svg"></img>
         </div>
     </div>
-    <form action="action.php" method="post">
+    <form action="submission.php" method="post">
         <div class="body">
             <div class="body-content">
 
@@ -61,11 +61,11 @@
                     </div>
                     <div class="radio-buttons">
                         <div>
-                            <input type="checkbox" name="auto-driving" value="Broke" required>
+                            <input type="checkbox" name="auto-driving-broke" value="Broke">
                             <label>Robot Broke</label>
                         </div>
                     </div>
-                    <input type="submit" id="broke" value="Submit" class="submit-button broke-button" formnovalidate>
+                    
                </div>
 
                 <!-- auto content  -->
@@ -74,161 +74,177 @@
                     <div class="divider"></div>
                     <div class="radio-buttons">
                         <div>
-                            <input type="checkbox" name="auto-driving" value="Engaged" required>
+                            <input type="radio" name="auto-driving" value="Engaged">
                             <label>Engaged</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="auto-driving" value="Docked" required>
+                            <input type="radio" name="auto-driving" value="Docked">
                             <label>Docked</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="auto-driving" value="Mobility" required>
-                            <label>Mobility</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" data-id="none" name="auto-driving" value="None" required >
+                            <input type="radio" data-id="none" name="auto-driving" value="None">
                             <label>None</label>
                         </div>
+                        <div>
+                            <input type="checkbox" name="auto-driving-mobility" value="Mobility">
+                            <label>Mobility</label>
+                        </div>
                     </div>
-                    <!-- <div class="buttons">
-                        <div class="button-info">
-                            <span> Score:</span>
-                            <span data-target="auto-score-view" value="1" class="button">+</span>
-                            <div id="auto-score-view">0</div>
-                            <input type="hidden" id="auto-score" name="auto-score" value="0">
-                            <span data-target="auto-score-view" value="-1" class="button">-</span>
-                        </div>
-                        <div class="button-info">
-                            <span>Misses:</span> 
-                            <span data-target="auto-misses-view" value="1" class="button">+</span>
-                            <div id="auto-misses-view">0</div>
-                            <input type="hidden" id="auto-misses" name="auto-misses" value="0">
-                            <span data-target="auto-misses-view" value="-1" class="button">-</span>
-                        </div>
+                    <div class="teleop-score-container">
+                        <!-- <div style="color:orange" class="piece-logo centered">▲</div> -->
+                        <div class="hits-title">Hits</div>
+                        <div class="misses-title">Misses</div>
+                        <div class="row-title centered">High</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-high-hits" name="auto-score-high-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-high-misses" name="auto-score-high-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Mid</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-mid-hits" name="auto-score-mid-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-mid-misses" name="auto-score-mid-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Low</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-low-hits" name="auto-score-low-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="auto-score-low-misses" name="auto-score-low-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                    </div>
+                    <!-- <div class="teleop-score-container">
+                        <div class="piece-logo centered">■</div>
+                        <div class="hits-title">Hits</div>
+                        <div class="misses-title">Misses</div>
+                        <div class="row-title centered">High</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-high-hits" name="auto-cube-score-high-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-high-misses" name="auto-cube-score-high-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Mid</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-mid-hits" name="auto-cube-score-mid-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-mid-misses" name="auto-cube-score-mid-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Low</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-low-hits" name="auto-cube-score-low-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="auto-cube-score-low-misses" name="auto-cube-score-low-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
                     </div> -->
-                    <div class="teleop-score-container">
-                        <div style="color:orange" class="piece-logo centered">⧍</div>
-                        <div class="hits-title">Hits</div>
-                        <div class="misses-title">Misses</div>
-                        <div class="row-title centered">High</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="row-title centered">Mid</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div  class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="row-title centered">Low</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div  class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                    </div>
-                    <div class="teleop-score-container">
-                        <div class="piece-logo centered">🟪</div>
-                        <div class="hits-title">Hits</div>
-                        <div class="misses-title">Misses</div>
-                        <div class="row-title centered">High</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="row-title centered">Mid</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div  class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="row-title centered">Low</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                        <div class="score-button centered" data-value="1">+</div>
-                        <div  class="score-value centered">0</div>
-                        <div class="score-button centered" data-value="-1">-</div>
-                    </div>
                 </div>
 
                 <!-- teleop content -->
                 <div class="teleop-content tab-content">
                     <header>Teleop</header>
                     <div class="divider"></div>
-                    <!-- <div class="buttons">
-                        <div class="button-info">
-                            <span> Score:</span>
-                            <span data-target="teleop-score-view" value="1" class="button">+</span>
-                            <div id="teleop-score-view">0</div>
-                            <input type="hidden" id="teleop-score" name="teleop-score" value="0">
-                            <span data-target="teleop-score-view" value="-1" class="button">-</span> 
-                        </div>
-                        <div class="button-info">
-                            <span>Misses:</span>
-                            <span data-target="teleop-misses-view" value="1" class="button">+</span>
-                            <div id="teleop-misses-view">0</div>
-                            <input type="hidden" id="teleop-misses" name="teleop-misses" value="0">
-                            <span data-target="teleop-misses-view" value="-1" class="button">-</span>
-                        </div>
-                    </div> -->
                     <div class="teleop-score-container">
-                        <div style="color:orange" class="piece-logo centered">⧍</div>
+                        <!-- <div style="color:orange" class="piece-logo centered">▲</div> -->
                         <div class="hits-title">Hits</div>
                         <div class="misses-title">Misses</div>
                         <div class="row-title centered">High</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-high-hits" name="teleop-score-high-hits" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-high-misses" name="teleop-score-high-misses" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                         <div class="row-title centered">Mid</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-mid-hits" name="teleop-score-mid-hits" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div  class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-mid-misses" name="teleop-score-mid-misses" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                         <div class="row-title centered">Low</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-low-hits" name="teleop-score-low-hits" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                         <div class="score-button centered" data-value="1">+</div>
                         <div  class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-score-low-misses" name="teleop-score-low-misses" value="0">
                         <div class="score-button centered" data-value="-1">-</div>
                     </div>
+                    <!-- <div class="teleop-score-container">
+                        <div class="piece-logo centered">■</div>
+                        <div class="hits-title">Hits</div>
+                        <div class="misses-title">Misses</div>
+                        <div class="row-title centered">High</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-high-hits" name="teleop-cube-score-high-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-high-misses" name="teleop-cube-score-high-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Mid</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-mid-hits" name="teleop-cube-score-mid-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-mid-misses" name="teleop-cube-score-mid-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="row-title centered">Low</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-low-hits" name="teleop-cube-score-low-hits" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                        <div class="score-button centered" data-value="1">+</div>
+                        <div  class="score-value centered">0</div>
+                            <input type="hidden" id="teleop-cube-score-low-misses" name="teleop-cube-score-low-misses" value="0">
+                        <div class="score-button centered" data-value="-1">-</div>
+                    </div> -->
                 </div>
-
-
                 <!-- endgame content -->
                 <div class="endgame-content tab-content">
                     <header>Endgame</header>
                     <div class="divider"></div>
                     <div class="radio-buttons">
                         <div>
-                            <input type="checkbox" name="teleop-driving" value="Engaged" required>
+                            <input type="radio" name="endgame-driving" value="Engaged">
                             <label>Engaged</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="teleop-driving" value="Docked" required>
+                            <input type="radio" name="endgame-driving" value="Docked">
                             <label>Docked</label>
                         </div>
                         <div>
-                            <input type="checkbox" name="teleop-driving" value="Parked" required>
-                            <label>Parked</label>
+                            <input type="radio" data-id="none" name="endgame-driving" value="None">
+                            <label>None</label>
                         </div>
                         <div>
-                            <input type="checkbox" data-id="none" name="teleop-driving" value="None" required>
-                            <label>None</label>
+                            <input type="checkbox" name="endgame-driving-parked" value="Parked">
+                            <label>Parked</label>
                         </div>
                     </div>
                     <div class="radio-buttons">
@@ -238,11 +254,11 @@
                         </div>
                         <div>
                             <input type="radio" name="teleop-qual" value="Double" required>
-                            <label>Double Climb</label>
+                            <label>Double Engaged</label>
                         </div>
                         <div>
                             <input type="radio" name="teleop-qual" value="Triple" required>
-                            <label>Triple Climb</label>
+                            <label>Triple Engaged</label>
                         </div>
             
                     </div>
@@ -258,6 +274,7 @@
                                     <div data-value="4" class="star">★</div>
                                     <div data-value="5" class="star">★</div>
                                     <span class="star-clear-button">CLEAR</span>
+                                    <input type="hidden" id="star-cycle-speed-rating" name="star-cycle-speed-rating" value="0">
                                 </div>
                             </div>
                             <div class="qual">
@@ -270,6 +287,7 @@
                                     <div data-value="4" class="star">★</div>
                                     <div data-value="5" class="star">★</div>
                                     <span class="star-clear-button">CLEAR</span>
+                                    <input type="hidden" id="star-maneuverability-rating" name="star-maneuverability-rating" value="0">
                                 </div>
                             </div>
                             <div class="qual">
@@ -282,6 +300,7 @@
                                     <div data-value="4" class="star">★</div>
                                     <div data-value="5" class="star">★</div>
                                     <span class="star-clear-button">CLEAR</span>
+                                    <input type="hidden" id="star-defensive-ability-rating" name="star-defensive-ability-rating" value="0">
                                 </div>
                             </div>
                             <div class="qual">
@@ -294,6 +313,7 @@
                                     <div data-value="4" class="star">★</div>
                                     <div data-value="5" class="star">★</div>
                                     <span class="star-clear-button">CLEAR</span>
+                                    <input type="hidden" id="star-overall-rating" name="star-overall-rating" value="0">
                                 </div>
                             </div>
                         </div>
@@ -305,7 +325,8 @@
                             <textarea id="text-comment" name="comments" rows="4"></textarea>
                         </div>
                     </div>
-                    <input type="submit" class="submit-button">
+                    <input type="submit" id="aaaa" class="submit-button">
+                    <input type="submit" id="broke-button" value="Submit" class="submit-button broke-button" formnovalidate>
                 </div> 
             </div>
         </div>
@@ -313,7 +334,9 @@
     <div class="spacer"></div>
     <div class="footer">
         <div class="footer-text">
+            <a id="help-link" href="help.html">Help</a>
             <img class="logo" src="imgs/demonslogo.png" alt="Demons logo">
+            <a id="help-link" href="../scouting-graphs/index.html">Data Dashboard</a>
         </div>
         
     </div>
